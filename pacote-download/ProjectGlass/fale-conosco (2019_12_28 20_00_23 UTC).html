@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8"/>
+	<title> All about Google Glass </title>
+	<link rel="stylesheet" href="_css/estilo.css"/>
+	<link rel="stylesheet" href="_css/form.css"/>
+<script language="javascript" src="_javascript/funcoes.js"></script>
+<script>
+    function calc_total () {
+        var qtd = parseInt(document.getElementById('cQtd').value);
+        var tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+
+</head>
+
+<body>
+<div id= "interface">
+<header id="cabecalho">
+<hgroup>
+<h1>Google Glass</h1>
+<h2>Google's revolution is coming soon</h2>
+</hgroup>
+	
+<img id="icone" src="_imagens/contato.png"/>
+
+<nav id="menu">
+<h1>Main</h1>
+<ul type= "disc">
+	<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+	<li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Specification</a></li>
+	<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Photos</a></li>
+	<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Media</a></li>	
+	<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Contact us</a></li>
+</ul>
+</nav>
+</header>
+
+<header id="cabecalho-artigo">
+<hgroup>
+<h3>Contact us > Contact </h3>
+<h1>Contact Form </h1>
+<h2>by Diego Dias </h2>
+<h3 class="direita">Updated on the July 14th of 2019</h3>
+</hgroup>
+</header>
+
+<form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
+
+<fieldset id="usuario"><legend>User Identification</legend>
+    <p><label for="cNome">Name:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Full name"/></p>
+    <p><label for="cSenha">Password:</label><input type="password" name="tSenha" id="cSenha" size="4" maxlength="8" placeholder="8 digits"/></p>
+    <p><label for="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="20" maxlength="40"/></p>
+    <fieldset id="sexo"><legend>Gender:</legend>
+        <input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Male</label> <br/>
+        <input type="radio" name="tSexo" id="cFem"/><label for="cFem">Female</label>
+		</fieldset>
+    <p><label for="cNasc">Date of birth:</label> <input type="date" name="tNasc" id="cNasc"/></p>
+</fieldset>
+
+<fieldset id="endereco"><legend>User Address</legend>
+    <p><label for="cRua">Address street:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Street, Avenue, Square ..."> </p>
+   <p> <label for="cNum">Number:</label><input type="number" name="tNum" id="cNum" min="0" max="999999"/></p>
+    <p> <label for="cEst">State/Province/County:</label> 
+	<select name="tEst" id="cEst">
+	<optgroup label="Região Sudeste"><option value="RJ">Rio de Janeiro </option>
+	<option value="SP" selected>São Paulo </option>
+	<option value="MG">Minas Gerais </option>
+	</optgroup>
+	
+	<optgroup label="Região Sul">
+	<option value="PR">Paraná </option>
+	<option value="SC">Santa Catarina</option>
+	<option value="RS">Rio Grande do Sul </option>
+	</optgroup>
+	</select> </p>
+    <p> <label for="cCid">City:</label> 
+	<input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Your city" list="cidades"/> 
+	</p>
+	<datalist id="cidades">
+	<option value="Rio de Janeiro"></option>
+	<option value="Nova Iguaçu"></option>
+	<option value="Niterói"></option>
+	<option value="Belford Roxo"></option>
+	
+	</datalist>
+</fieldset>
+
+<fieldset id="mensagem"><legend>Message from the user</legend>
+    <p> <label for="cUrg">Relevance:</label>
+	Min<input type="range" name="tUrg" id="cUrg" min="0"  max="10" step="2"/>Max</p>
+    <p> <label for="cMsg">Message:</label>
+	<textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Send us your message"></textarea>
+	</p>
+</fieldset>
+
+<fieldset id="pedido"><legend>I want a Google Glass</legend>
+    <p><input type="checkbox"	 name="tPed" id="iPed" checked/>
+	<label for="cPed">I would like to be notified when Google Glass is available for purchase</label></p>
+    <p><label for="cCor">Color:</label>
+	<input type="color" name="tCor" id="cCor" value="#0000ff"/></p>
+    <p><label for="cQtd">Quantity:</label>
+	<input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+	</p>
+    <p> <label for="cTot">Total: $</label>
+	<input type="text" name="tTot" id="cTot" placeholder="Total Price" readonly/>
+	</p>
+</fieldset>
+
+
+<input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+
+</form>
+<footer id="rodape"> 
+<p>Copyright &copy; 2019 - by Diego Dias <br/>
+<a href="https://www.facebook.com/die.dias/" target="_blank">Facebook</a> | 
+<a href="https://github.com/DiegoDDP90/" target="_blank">Github</a></p>
+</footer>
+</div>
+</body>
+</html>
